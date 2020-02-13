@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
 import './App.css';
+import {Contact} from "./Pages/Contact";
+import {Order} from "./Pages/Order";
 
-function App() {
+const App = () => {
+
+  let state = {
+    isAuthenticated: 1
+  }
+
+  let routes = (
+    <Switch>
+      <Route path='/' exact component={Contact}/>
+    </Switch>
+  )
+  if (state.isAuthenticated) {
+    routes = (
+      <Switch>
+        <Route path='/' exact component={Contact}/>
+        <Route path='/order' component={Order}/>
+        <Redirect to='/'/>
+      </Switch>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {routes}
     </div>
-  );
+  )
 }
 
-export default App;
+export default withRouter(App);
