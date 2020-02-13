@@ -1,5 +1,6 @@
 module.exports = {
-  stories: ['../src/**/*.stories.js'],
+  //Импортируем в preview.js
+  // stories: ['../src/**/*.stories.js'],
   addons: [
     '@storybook/preset-create-react-app',
     '@storybook/addon-actions',
