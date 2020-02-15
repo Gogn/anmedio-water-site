@@ -1,0 +1,6 @@
+export const APP_SET_STATE = 'APP_SET_STATE'
+export const APP_SET_DEVICE = 'APP_SET_DEVICE'
+export const ORDER_AGAIN = 'ORDER_AGAIN'
+// export const  = ''
+// export const  = ''
+// export const  = ''

@@ -1,21 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import './index.css'
+import {AppContext} from "./store/appContext";
 import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
-import './App.css';
 import {Contact} from "./Pages/Contact";
 import {Order} from "./Pages/Order";
 
 const App = () => {
-
-  let state = {
-    isAuthenticated: 1
-  }
+  const appContext = useContext(AppContext)
+  // const { isAuthenticated } = useContext(AppContext)
 
   let routes = (
     <Switch>
       <Route path='/' exact component={Contact}/>
     </Switch>
   )
-  if (state.isAuthenticated) {
+
+  if (appContext.isAuthenticated) {
     routes = (
       <Switch>
         <Route path='/' exact component={Contact}/>
@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className='grid'>
       {routes}
     </div>
   )

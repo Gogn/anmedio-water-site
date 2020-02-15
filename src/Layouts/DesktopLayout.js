@@ -1,22 +1,28 @@
 import React from 'react';
+import Promo from "../Components/Forms/Promo/Promo";
 
 function DesktopLayout() {
-let step = 2
+let step = 1
 
 
   if (step===1) {
     return (
-      <div>
-        <h1>DesktopLayout 1</h1>
+      <div className='desktop'>
+        1
+        <div className='c'>asdasd</div>
+        <div>qweqweqwe</div>
+        <div>zxczxczxc</div>
+        <Promo/>
       </div>
     )
   }
 
   if (step===2) {
     return (
-      <div>
-        <h1>DesktopLayout 2</h1>
-      </div>
+      <>
+        2
+        <Promo/>
+      </>
     )
   }
 
