@@ -1,7 +1,15 @@
+.promo {
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+}
+
 .logo {
-  position: absolute;
-  width: 320px;
-  height: 185px;
-  left: 77px;
-  top: 224px;
+  text-align: center;
+}
+
+.about {
+  width: 240px;
+  height: 105px;
+  margin-left: auto;
+  margin-right: auto;
 }

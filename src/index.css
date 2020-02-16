@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/917a69d24b88e2d4d2ca803c0605bd59?family=CeraPRO);
+/*@import url(//db.onlinewebfonts.com/c/917a69d24b88e2d4d2ca803c0605bd59?family=CeraPRO);*/
 /*@font-face {*/
 /*  font-family: 'Cera Pro';*/
 /*  src: url(//db.onlinewebfonts.com/c/917a69d24b88e2d4d2ca803c0605bd59?family=CeraPRO);*/
@@ -6,12 +6,21 @@
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url('./fonts/CeraPro-Regular.eot');
-  src: url('./fonts/CeraPro-Regular.eot');
-  src: url('./fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+  src: local('Cera Pro Regular'), local('Cera-Pro-Regular'),
+  url('./fonts/CeraPro-Regular.woff2') format('woff2'),
   url('./fonts/CeraPro-Regular.woff') format('woff'),
   url('./fonts/CeraPro-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro Bold';
+  src: local('Cera Pro Bold'), local('Cera-Pro-Bold'),
+  url('./fonts/CeraPro-Bold.woff2') format('woff2'),
+  url('./fonts/CeraPro-Bold.woff') format('woff'),
+  url('./fonts/CeraPro-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -25,24 +34,89 @@
 body {
   min-height: 100vh;
   margin: 0;
-  /*box-sizing: border-box;*/
-  font-family: 'Cera Pro';
+  font-family: 'Cera Pro', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+H1 {
+  font-family: 'Cera Pro Bold';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #455273;
+  margin-top: 25px;
+}
+
+H2 {
+  font-family: 'Cera Pro Bold';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #455273;
+}
+
+H3 {
+  font-family: Cera Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  color: #455273;
+}
+
+P {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #455273;
+  margin-top: 40px;
 }
 
 .grid {
+  min-height: 100vh;
   display: grid;
   grid-gap: 15px;
 }
 
-.grid .desktop {
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
+.desktop-1 {
+  background: #E5E5E5;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+      "Promo Contact"
+      "Promo Select";
 }
 
-.div .desktop .c {
+.desktop-6 {
+  background: #E5E5E5;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+      "Promo Order";
+}
 
+.Promo {
+  grid-area: Promo;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.Contact { grid-area: Contact; }
+.Select { grid-area: Select; }
+.Order { grid-area: Order; }
+
+
+
+
+.container {
+  text-align: center;
 }
 
 .mobile {

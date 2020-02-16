@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import './index.css'
 import {AppContext} from "./store/appContext";
 import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
-import {Contact} from "./Pages/Contact";
+import {DesktopOrder} from "./Pages/DesktopOrder";
 import {Order} from "./Pages/Order";
 
 const App = () => {
@@ -11,14 +11,14 @@ const App = () => {
 
   let routes = (
     <Switch>
-      <Route path='/' exact component={Contact}/>
+      <Route path='/' exact component={DesktopOrder}/>
     </Switch>
   )
 
   if (appContext.isAuthenticated) {
     routes = (
       <Switch>
-        <Route path='/' exact component={Contact}/>
+        <Route path='/' exact component={DesktopOrder}/>
         <Route path='/order' component={Order}/>
         <Redirect to='/'/>
       </Switch>
@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <div className='grid'>
+    <div className=''>
       {routes}
     </div>
   )
