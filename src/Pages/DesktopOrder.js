@@ -4,11 +4,12 @@ import React, {useContext} from 'react'
 import Promo from "../Components/Forms/Promo/Promo";
 import {AppContext} from "../store/appContext";
 import {Contact} from "../Components/Forms/Contact/Contact";
+import {Select} from "../Components/Forms/Select/Select";
 
 export const DesktopOrder = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
 
-  const appContext = useContext(AppContext)
+  // const appContext = useContext(AppContext)
 
   if (deviceType) {
     if (mobileStep === 1) {
@@ -30,21 +31,28 @@ export const DesktopOrder = () => {
         </>
       )
     }
-  }
-
-  else {
+  } else {
     return (
-      <div className='grid desktop-1'>
+      <div className='main flex flex-center'>
 
-        <div className='Promo'>
+        <div className='promo'>
           <Promo/>
         </div>
 
-        <div className='Contact'>
-          <Contact/>
-        </div>
-        <div className='Select'>
-          <h1>Select</h1>
+        <div className="content">
+
+          <div className='contact'>
+            <Contact/>
+          </div>
+          <hr/>
+          <div className='select'>
+            <Select/>
+          </div>
+          <hr/>
+          <div className='order'>
+            <h1>order</h1>
+          </div>
+
         </div>
 
       </div>

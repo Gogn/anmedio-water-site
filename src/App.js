@@ -26,9 +26,9 @@ const App = () => {
   }
 
   return (
-    <div className=''>
+    <>
       {routes}
-    </div>
+    </>
   )
 }
 

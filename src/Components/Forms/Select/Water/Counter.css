@@ -1,0 +1,55 @@
+.counter {
+
+}
+
+.circle {
+  border: 0px;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  background-color: #FFC369;
+  border-radius: 100%;
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+}
+
+.plus::after {
+  content: " ";
+  position: absolute;
+  background-color: #fff;
+  height: 6px;
+  margin-top: -3px;
+  top: 50%;
+  left: 7px;
+  right: 7px;
+}
+.plus::before {
+  content: " ";
+  position: absolute;
+  background-color: #fff;
+  width: 6px;
+  margin-left: -3px;
+  left: 50%;
+  top: 7px;
+  bottom: 7px;
+}
+
+.minus::before {
+  content: " ";
+  position: absolute;
+  background-color: #fff;
+  width: 6px;
+  margin-left: -3px;
+  left: 50%;
+  top: 7px;
+  bottom: 7px;
+}
+
+.amount {
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  top: 5px;
+}

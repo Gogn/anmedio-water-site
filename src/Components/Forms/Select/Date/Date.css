@@ -1,0 +1,57 @@
+.shift {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: 1.5px solid #E5EDFF;
+  border-radius: 100%;
+  padding-top: 5px;
+  margin-right: 8px;
+}
+/*.back:before { content: url('back.svg'); padding-top: 20px; }*/
+/*.forward:before { content: url('forward.svg'); padding-top: 7px; }*/
+
+.image {
+  padding-bottom: 4px;
+}
+
+.date-btn {
+  height: 30px;
+  width: 30px;
+  background-color: #E5EDFF;
+  border: none;
+  border-radius: 100%;
+  margin-right: 8px;
+}
+
+ br {
+  display: block;
+   content: '';
+  line-height: 10px;
+}
+
+.date-btn span {
+  position: relative;
+  display: block;
+  line-height: 10px;
+  text-align: center;
+  margin-bottom: 1px;
+  /*padding: 1px;*/
+}
+
+.date {
+  font-family: Cera Pro;
+  color: #455273;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  margin: 0px;
+  padding: 0;
+}
+
+.day {
+  font-family: Cera Pro;
+  font-size: 9px;
+  line-height: 11px;
+  margin: 0px;
+  padding: 0;
+}
