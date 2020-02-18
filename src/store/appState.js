@@ -12,7 +12,7 @@ export const AppState = ({children}) => {
       waterType: 1,
       waterAmount: 1,
       date: new Date(),
-      time: '12:00-13:00'
+      time: ''
     }
   }
 
@@ -24,9 +24,7 @@ export const AppState = ({children}) => {
   const [state, dispatch] = useReducer(appReducer, initialState)
 
   const setDevice = (payload) => dispatch({type: APP_SET_DEVICE, payload: payload})
-  const setDate = (payload) => {
-    console.log('appState: ' + state.order.date)
-    dispatch({type: SET_DATE, payload: payload})}
+  const setDate = (payload) => dispatch({type: SET_DATE, payload: payload})
   const setTime = (payload) => dispatch({type: SET_TIME, payload: payload})
   // const setOrder = (payload) => dispatch({type: APP_SET_STATE, payload: payload})
   const orderAgain = () => dispatch({type: ORDER_AGAIN})
