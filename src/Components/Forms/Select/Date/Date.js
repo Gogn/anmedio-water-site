@@ -9,7 +9,7 @@ let state = {
 }
 
 //Button with date
-const DayButton = {date, day, style, key} => {
+const DayButton = ({date, day, style, key}) => {
   return (
     <button className='date-btn' >
       <span className='date'>{date}</span>
@@ -19,7 +19,7 @@ const DayButton = {date, day, style, key} => {
 }
 
 //Buttons with time intervals
-const TimeButton = {time, key} => {
+const TimeButton = ({time, key}) => {
   return (
     <button className='time-btn'>
       <span className='date'>{time}</span>
