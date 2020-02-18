@@ -9,21 +9,33 @@ let state = {
 }
 
 //Button with date
-const DayButton = (props) => {
+const DayButton = {date, day, style, key} => {
   return (
-    <button className='date-btn'>
-      <span className='date'>{props.date}</span>
-      <span className='day' style={props.style}>{props.day}</span>
+    <button className='date-btn' >
+      <span className='date'>{date}</span>
+      <span className='day' style={style}>{day}</span>
     </button>
   )
 }
 
-//
-export const DatePicker = () => {
+//Buttons with time intervals
+const TimeButton = {time, key} => {
+  return (
+    <button className='time-btn'>
+      <span className='date'>{time}</span>
+    </button>
+  )
+}
 
+//Buttons with dates component
+export const DatePicker = () => {
   const {deviceType, order} = useContext(AppContext)
   const [currentDay, setCurrentDay] = useState(order.date.getDate())
   const [shift, setShift] = useState(0)
+  const [selectedDay, setSelectedDay] = useState(0)
+
+
+
 
   //Define last day of month
   const getDay = (currentDay) => {
@@ -33,6 +45,7 @@ export const DatePicker = () => {
       setCurrentDay(1)
       setShift(0)
     }
+
     return currentDay;
   }
 
@@ -51,27 +64,29 @@ export const DatePicker = () => {
       state.cls = {color: '#9CAEDD'}
     }
     return day;
+
   }
 
   //Initial buttons array formation
-  let initialButtons = []
+  let initialDateButtons = []
   if (!deviceType) {
     for (let i = shift; i < 6; i++) {
-      initialButtons.push(
+      initialDateButtons.push(
         <DayButton
           date={getDay(currentDay + i)}
           day={getDayAbbreviation(currentDay + i)}
-          style={state.cls} key={i}
+          style={state.cls}
+          key={i}
         />
       )
     }
   }
-  // buttons - array of  <DayButton/>
-  const [buttons, setButtons] = useState(initialButtons)
+  // Datebuttons - array of  <DayButton/>
+  const [dateButtons, setDateButtons] = useState(initialDateButtons)
 
   // Shifting days by button 'shift' onClick
   // Баги:
-    //    Не всегда срабатывает нажатие на кнопку сдвига
+  //    Не всегда срабатывает нажатие на кнопку сдвига
   //      Отрицательные значения не обрабатываются
   const dayShiftHandler = (event) => {
     event.preventDefault()
@@ -83,7 +98,6 @@ export const DatePicker = () => {
         setShift(shift + 1)
         break
     }
-    // event.target.value === '-' ? setShift(shift - 1) : setShift(shift + 1)
 
     if (!deviceType) {
       let newButton = []
@@ -97,11 +111,54 @@ export const DatePicker = () => {
           />
         ]
       }
-      setButtons(newButton)
+      setDateButtons(newButton)
     }
     console.log('shift: ' + shift)
     console.log('event: ' + event.target.value)
   }
+
+
+  const timeIntervalsWeekday = ['10:00 - 11:00', '12:00 - 13:00', '15:00 - 16:00']
+  const timeIntervalsHoliday = ['12:00 - 13:00', '15:00 - 16:00']
+
+  //Initial timeButtons array formation
+  let initialTimeButtons = []
+  if ( getDayAbbreviation(currentDay)  === 'вс' || getDayAbbreviation(currentDay) === 'сб') {
+    for (let i = 0; i < timeIntervalsWeekday.length; i++) {
+      initialTimeButtons.push(
+        <TimeButton
+          time={timeIntervalsWeekday[i]}
+          style={state.cls} key={i}
+        />
+      )
+    }
+  } else {
+    for (let i = 0; i < 3; i++) {
+      initialTimeButtons.push(
+        <TimeButton
+          time={timeIntervalsWeekday[i]}
+          style={state.cls} key={i}
+        />
+      )
+    }
+  }
+
+  const timePicker = () => {
+    //Initial timeButtons array formation
+    let initialTimeButtons = []
+    if (!deviceType) {
+      for (let i = shift; i < timeIntervalsHoliday.length; i++) {
+        initialTimeButtons.push(
+          <TimeButton
+            time={timeIntervalsHoliday[i]}
+            style={state.cls} key={i}
+          />
+        )
+      }
+    }
+  }
+  // TimeButtons - array of  <DayButton/>
+  const [timeButtons, setTimeButtons] = useState(initialTimeButtons)
 
 
   return (
@@ -109,17 +166,19 @@ export const DatePicker = () => {
       <h1>Дата и время доставки</h1>
       <h5>День</h5>
       <form action="">
-        {/*<Button onClick={this.handleInput} value="clear">C</Button>*/}
-        <button className='shift' onClick={event => dayShiftHandler(event, "value")} value='-'>
+        <button className='shift' onClick={dayShiftHandler} value='-'>
           <img className='image' src={back} alt="back"/>
         </button>
-        {buttons}
-        <button className='shift' onClick={event => dayShiftHandler(event, "value")} value='+'>
+        {dateButtons}
+        <button className='shift' onClick={dayShiftHandler} value='+'>
           <img className='image' src={forward} alt="forward"/>
         </button>
       </form>
 
       <h5> Время </h5>
+      <form action="">
+        {timeButtons}
+      </form>
     </div>
   )
 }

@@ -23,12 +23,6 @@
   margin-right: 8px;
 }
 
- br {
-  display: block;
-   content: '';
-  line-height: 10px;
-}
-
 .date-btn span {
   position: relative;
   display: block;
@@ -55,3 +49,13 @@
   margin: 0px;
   padding: 0;
 }
+
+.time-btn {
+  height: 30px;
+  width: 92px;
+  background-color: #E5EDFF;
+  border: none;
+  border-radius: 15px;
+  margin-right: 8px;
+}
+
