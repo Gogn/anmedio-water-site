@@ -50,7 +50,7 @@ const BigBottle = props => (
         <feColorMatrix
           in="SourceAlpha"
           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        ></feColorMatrix>
+        />
         <feOffset dy="4"></feOffset>
         <feGaussianBlur stdDeviation="15"></feGaussianBlur>
         <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"></feColorMatrix>
