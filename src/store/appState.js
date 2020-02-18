@@ -11,7 +11,7 @@ export const AppState = ({children}) => {
     order: {
       waterType: 1,
       waterAmount: 1,
-      date: '',
+      date: new Date(),
       time: '12:00-13:00'
     }
   }
