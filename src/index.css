@@ -18,11 +18,11 @@
   font-style: normal;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/**,*/
+/**::before,*/
+/**::after {*/
+/*  box-sizing: border-box;*/
+/*}*/
 
 
 body {
@@ -52,9 +52,9 @@ H2 {
   font-family: 'Cera Pro Bold';
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
-  text-align: center;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: left;
   color: #455273;
 }
 
@@ -68,8 +68,11 @@ H3 {
 }
 
 H5 {
+  text-align: left;
   font-size: 10px;
   line-height: 13px;
+  margin-bottom: 10px;
+  margin-top: 15px;
   letter-spacing: 0.05em;
   color: #BABDC2;
 }
@@ -85,6 +88,8 @@ P {
 
 HR {
   border: 1px dashed #D5DDE0;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .main {
@@ -101,13 +106,25 @@ HR {
   align-items: center;
 }
 
-.flex-row-wrap {
+.flex-row {
   flex-direction: row;
+}
+
+.flex-wrap {
   flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .space-around {
   justify-content: space-around;
+  align-content: stretch;
 }
 
 .space-between {
@@ -116,6 +133,10 @@ HR {
 
 .flex-start {
   justify-content: flex-start;
+}
+
+.flex-grow-1 {
+ flex-grow: 1;
 }
 
 .promo {
@@ -128,7 +149,7 @@ HR {
   /*flex-direction: column;*/
   flex-grow: 1;
   /*width: 50vw;*/
-  max-width: 60%;
+  width: 40%;
   /*justify-content: center;*/
   /*margin-left: 5vw;*/
   /*margin-right: 5vw;*/
@@ -144,6 +165,8 @@ HR {
 .select {
   /*flex-grow: 1;*/
 }
+
+
 
 /*.grid {*/
 /*  min-height: 100vh;*/
@@ -191,4 +214,12 @@ HR {
 
 .module {
 
+}
+
+.margin {
+  margin-right: 20px;
+}
+
+.margin-left {
+  padding-left: 20vw;
 }

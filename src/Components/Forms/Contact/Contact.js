@@ -19,11 +19,11 @@ export const Contact = () => {
 
   return (
     <div>
-      <h1>Заполните данные</h1>
+      <h2>Заполните данные</h2>
 
       <form onSubmit={submitHandler}>
 
-        <div className="flex flex-row-wrap space-around">
+        <div className="flex flex-row flex-wrap space-around">
           <div className="item">
             <input type="text" className="form-input" placeholder='ФИО'/>
             <input type="text" className="form-input" placeholder='Телефон'/>

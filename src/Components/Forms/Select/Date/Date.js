@@ -1,17 +1,31 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import './Date.css'
 import forward from './forward.svg'
 import back from './back.svg'
 import {AppContext} from "../../../../store/appContext";
 
 let state = {
+  // currentDay: new Date().getDate(),
   cls: {},
 }
 
+
 //Button with date
 const DayButton = ({date, day, style, key}) => {
+  const {setDate} = useContext(AppContext)
+  const {order} = useContext(AppContext)
+
+  const SetDateHandler = (event, date) => {
+    event.preventDefault()
+    setDate(date)
+    console.log('event: ' + date)
+    console.log('order.date1: ' + order.date)
+  }
+
+  const date1 = date
+  console.log('date1: ' + date)
   return (
-    <button className='date-btn' >
+    <button className='date-btn' onClick={(event) => SetDateHandler(event, date)}>
       <span className='date'>{date}</span>
       <span className='day' style={style}>{day}</span>
     </button>
@@ -30,16 +44,15 @@ const TimeButton = ({time, key}) => {
 //Buttons with dates component
 export const DatePicker = () => {
   const {deviceType, order} = useContext(AppContext)
-  const [currentDay, setCurrentDay] = useState(order.date.getDate())
+  const dateNow = new Date()
+  const [currentDay, setCurrentDay] = useState(dateNow.getDate())
   const [shift, setShift] = useState(0)
   const [selectedDay, setSelectedDay] = useState(0)
 
 
-
-
   //Define last day of month
   const getDay = (currentDay) => {
-    let lastDayNumber = new Date(order.date.getFullYear(), order.date.getMonth() + 1, 0).getDate();
+    let lastDayNumber = new Date(dateNow.getFullYear(), dateNow.getMonth() + 1, 0).getDate();
 
     if (currentDay > lastDayNumber) {
       setCurrentDay(1)
@@ -64,7 +77,6 @@ export const DatePicker = () => {
       state.cls = {color: '#9CAEDD'}
     }
     return day;
-
   }
 
   //Initial buttons array formation
@@ -123,7 +135,7 @@ export const DatePicker = () => {
 
   //Initial timeButtons array formation
   let initialTimeButtons = []
-  if ( getDayAbbreviation(currentDay)  === 'вс' || getDayAbbreviation(currentDay) === 'сб') {
+  if (getDayAbbreviation(currentDay) === 'вс' || getDayAbbreviation(currentDay) === 'сб') {
     for (let i = 0; i < timeIntervalsWeekday.length; i++) {
       initialTimeButtons.push(
         <TimeButton
@@ -159,26 +171,39 @@ export const DatePicker = () => {
   }
   // TimeButtons - array of  <DayButton/>
   const [timeButtons, setTimeButtons] = useState(initialTimeButtons)
+  const {setDate} = useContext(AppContext)
 
-
+  console.log(dateButtons)
   return (
     <div>
-      <h1>Дата и время доставки</h1>
-      <h5>День</h5>
-      <form action="">
-        <button className='shift' onClick={dayShiftHandler} value='-'>
-          <img className='image' src={back} alt="back"/>
-        </button>
-        {dateButtons}
-        <button className='shift' onClick={dayShiftHandler} value='+'>
-          <img className='image' src={forward} alt="forward"/>
-        </button>
-      </form>
+      <h2>Дата и время доставки</h2>
 
-      <h5> Время </h5>
-      <form action="">
-        {timeButtons}
-      </form>
+      <div className=''>
+
+        <h5>День</h5>
+          <form action="">
+            <div className='flex flex-row flex-center  flex-nowrap space-between'>
+
+            <button className='shift' onClick={dayShiftHandler} value='-'>
+              <img className='image' src={back} alt="back"/>
+            </button>
+            {dateButtons}
+            <button className='shift' onClick={dayShiftHandler} value='+'>
+              <img className='image' src={forward} alt="forward"/>
+            </button>
+            </div>
+
+          </form>
+
+
+        <h5>Время</h5>
+        <div className='flex flex-row flex-center space-around'>
+          <form action="">
+            {timeButtons}
+          </form>
+        </div>
+
+      </div>
     </div>
   )
 }
