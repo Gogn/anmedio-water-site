@@ -2,8 +2,8 @@ import React, {useContext} from 'react';
 import './index.css'
 import {AppContext} from "./store/appContext";
 import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
-import {DesktopOrder} from "./Pages/DesktopOrder";
 import {Order} from "./Pages/Order";
+import {OrderFinish} from "./Pages/OrderFinish";
 
 const App = () => {
   const appContext = useContext(AppContext)
@@ -11,15 +11,15 @@ const App = () => {
 
   let routes = (
     <Switch>
-      <Route path='/' exact component={DesktopOrder}/>
+      <Route path='/' exact component={Order}/>
     </Switch>
   )
 
   if (appContext.isAuthenticated) {
     routes = (
       <Switch>
-        <Route path='/' exact component={DesktopOrder}/>
-        <Route path='/order' component={Order}/>
+        <Route path='/' exact component={Order}/>
+        <Route path='/order' component={OrderFinish}/>
         {/*<Redirect to='/'/>*/}
       </Switch>
     )

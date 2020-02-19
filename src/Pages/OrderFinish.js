@@ -7,8 +7,9 @@ import {Contact} from "../Components/Forms/Contact/Contact";
 import {Select} from "../Components/Forms/Select/Select";
 import {Bill} from "../Components/Forms/Select/Bill/Bill";
 import {Button} from "../Components/UI/Button/Button";
+import { ReactComponent as OkSvg } from './ok.svg'
 
-export const DesktopOrder = () => {
+export const OrderFinish = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
 
   // const appContext = useContext(AppContext)
@@ -43,25 +44,24 @@ export const DesktopOrder = () => {
 
         <div className="content">
 
-          <div className='contact'>
-            <Contact/>
-          </div>
-          <hr/>
-          <div className='select'>
-            <Select/>
-          </div>
-          <hr/>
-          <div className=''>
-            <Bill/>
-          </div>
-          <div>
-            <Button
-              text='Заказать воду'
-              type='blue'
-              to='/order'
-            />
+          <h2><OkSvg className='ok'/><span>Заказ Оформлен</span></h2>
+
+          <div className='order'>
+            <p>hghgjg<span>asdasdasd</span></p>
+            <p>hghgjg<span>asdasdasd</span></p>
+            <p>hghgjg<span>asdasdasd</span></p>
+            <p>hghgjg<span>asdasdasd</span></p>
           </div>
 
+            <Bill/>
+            <p className='text-content' style={{color: '#818FB3'}}>Ваш заказ №221 успешно оформлен. В ближайшее время по указанному телефону с Вами свяжется наш менеджер.</p>
+          <div>
+            <Button
+              text='Новый заказ'
+              type='blue'
+              to='/'
+            />
+          </div>
         </div>
 
       </div>

@@ -1,13 +1,13 @@
 import React from 'react';
-import { DesktopOrder } from './DesktopOrder';
-import { Order } from "./Order";
+import { Order } from './Order';
+import { OrderFinish } from "./OrderFinish";
 
 
 export default {
   title: 'Pages',
-  component: DesktopOrder,
+  component: Order,
 };
 
 export const contact = () => (
-  <DesktopOrder/>
+  <Order/>
 )
