@@ -93,26 +93,3 @@ export const Water = () => {
     </div>
   )
 }
-//
-// const Selectt = () => {
-//   const [choise, setChoise] = useState()
-//   const {setBigBottles, setSmallBottles1, setSmallBottles2, order} = useContext(AppContext)
-//
-//
-//   const addBottlesHandler = (type) => {
-//     if (type === '+') {
-//       if (choise === 0) {
-//         setBigBottles()
-//         console.log(order.bigBottles)
-//       }
-//     }
-//   }
-//
-//   return (
-//     <div className=''>
-//       <button type='button' className="circle minus" onClick={() => addBottlesHandler('-')}><span/></button>
-//       <span className="amount">0</span>
-//       <button type='button' className="circle plus" onClick={() => addBottlesHandler('+')}><span/></button>
-//     </div>
-//   )
-// }
