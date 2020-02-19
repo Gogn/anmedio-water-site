@@ -1,0 +1,26 @@
+.bill {}
+
+.bill hr {
+  border: 1px solid #D5DDE0;
+  border-radius: 6px;
+  margin: 0px;
+}
+
+.bill h2 {
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.bill span {
+  color: #D5DDE0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.normal {
+  font-family: 'Cera Pro' !important;
+  font-weight: 600 !important;
+}

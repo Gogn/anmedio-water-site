@@ -5,6 +5,7 @@ import Promo from "../Components/Forms/Promo/Promo";
 import {AppContext} from "../store/appContext";
 import {Contact} from "../Components/Forms/Contact/Contact";
 import {Select} from "../Components/Forms/Select/Select";
+import {Bill} from "../Components/Forms/Select/Bill/Bill";
 
 export const DesktopOrder = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
@@ -50,7 +51,7 @@ export const DesktopOrder = () => {
           </div>
           <hr/>
           <div className='order'>
-            <h1>order</h1>
+            <Bill/>
           </div>
 
         </div>

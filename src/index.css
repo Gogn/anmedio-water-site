@@ -56,6 +56,7 @@ H2 {
   line-height: 23px;
   text-align: left;
   color: #455273;
+  margin-top: 0px;
 }
 
 H3 {
@@ -144,64 +145,19 @@ HR {
 }
 
 .content {
-  /*line-height: 30px;*/
   background: #F5F8FF;
-  /*flex-direction: column;*/
   flex-grow: 1;
-  /*width: 50vw;*/
   width: 40%;
-  /*justify-content: center;*/
-  /*margin-left: 5vw;*/
-  /*margin-right: 5vw;*/
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding: 40px;
   margin-right: 5vw;
+  border-radius: 6px;
 }
 
 .contact {
-  /*flex-grow: 1;*/
 }
 
 .select {
-  /*flex-grow: 1;*/
 }
-
-
-
-/*.grid {*/
-/*  min-height: 100vh;*/
-/*  display: grid;*/
-/*  grid-gap: 15px;*/
-/*}*/
-
-/*.desktop-1 {*/
-/*  background: #E5E5E5;*/
-/*  grid-template-columns: 1fr 1fr;*/
-/*  grid-template-rows: 1fr 1fr;*/
-/*  grid-template-areas:*/
-/*      "Promo Contact"*/
-/*      "Promo Select";*/
-/*}*/
-
-/*.desktop-6 {*/
-/*  background: #E5E5E5;*/
-/*  grid-template-columns: 1fr 1fr;*/
-/*  grid-template-rows: 1fr;*/
-/*  grid-template-areas:*/
-/*      "Promo Order";*/
-/*}*/
-
-/*.Promo {*/
-/*  grid-area: Promo;*/
-/*  margin-top: auto;*/
-/*  margin-bottom: auto;*/
-/*}*/
-/*.Contact { grid-area: Contact; }*/
-/*.Select { grid-area: Select; }*/
-/*.Order { grid-area: Order; }*/
-
-
-
 
 .container {
   text-align: center;

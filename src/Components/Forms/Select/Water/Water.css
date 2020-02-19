@@ -1,0 +1,11 @@
+.waterButton {
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.select {
+  text-align: center;
+}

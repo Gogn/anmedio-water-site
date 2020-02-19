@@ -2,7 +2,6 @@ import React from 'react'
 import {Water} from "./Water/Water";
 import '../../../index.css'
 import {DatePicker} from "./Date/Date";
-import {Contact} from "../Contact/Contact";
 
 export const Select = () => {
   return (
@@ -13,21 +12,21 @@ export const Select = () => {
   )
 }
 
-
-class StateContainer extends React.Component {
-  state = {
-    days: {},
-    contacts: {},
-    currentPage: 'days',
-  }
-
-  render() {
-    if (this.state.selectedPage === 'days') {
-      return <DatePicker setDays={(days) => {
-        this.setState({days})
-      }}/>
-    } else {
-      //return <Contacts/>
-    }
-  }
-}
+//
+// class StateContainer extends React.Component {
+//   state = {
+//     days: {},
+//     contacts: {},
+//     currentPage: 'days',
+//   }
+//
+//   render() {
+//     if (this.state.selectedPage === 'days') {
+//       return <DatePicker setDays={(days) => {
+//         this.setState({days})
+//       }}/>
+//     } else {
+//       return <Contacts/>
+//     }
+//   }
+// }
