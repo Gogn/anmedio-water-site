@@ -33,13 +33,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label {
-  margin-top: 30px;
-  flex-basis: 100%;
-  display: inline-block;
-  background-repeat: no-repeat;
-  vertical-align: top;
   cursor: pointer;
-  color: #455273;
 }
 input[type="checkbox"] + label::before {
   content: '';

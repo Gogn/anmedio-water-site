@@ -6,6 +6,7 @@ import {AppContext} from "../store/appContext";
 import {Contact} from "../Components/Forms/Contact/Contact";
 import {Select} from "../Components/Forms/Select/Select";
 import {Bill} from "../Components/Forms/Select/Bill/Bill";
+import {Button} from "../Components/UI/Button/Button";
 
 export const DesktopOrder = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
@@ -36,7 +37,7 @@ export const DesktopOrder = () => {
     return (
       <div className='main flex flex-center'>
 
-        <div className='promo'>
+        <div className='flex-grow-1'>
           <Promo/>
         </div>
 
@@ -50,8 +51,15 @@ export const DesktopOrder = () => {
             <Select/>
           </div>
           <hr/>
-          <div className='order'>
+          <div className=''>
             <Bill/>
+          </div>
+          <div>
+            <Button
+              text='Заказать воду'
+              type='blue'
+              to='/order'
+            />
           </div>
 
         </div>

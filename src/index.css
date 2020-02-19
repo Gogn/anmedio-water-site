@@ -52,20 +52,22 @@ H2 {
   font-family: 'Cera Pro Bold';
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 23px;
   text-align: left;
   color: #455273;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 H3 {
-  font-family: Cera Pro;
+  font-family: 'Cera Pro Bold';
+  text-align: left;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
   color: #455273;
+  margin-top: 0;
 }
 
 H5 {
@@ -83,7 +85,7 @@ P {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  color: #455273;
+  color: #818FB3;
   margin-top: 40px;
 }
 
@@ -141,16 +143,57 @@ HR {
 }
 
 .promo {
-  flex-grow: 5;
+  flex-grow: 1;
 }
 
 .content {
   background: #F5F8FF;
-  flex-grow: 1;
-  width: 40%;
   padding: 40px;
-  margin-right: 5vw;
+  margin: 4vh 10vw 4vh 0;
   border-radius: 6px;
+  width: 50vw;
+}
+
+.order {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 40px 0 30px 0;
+  color: #455273;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.order p {
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 18px;
+  flex-grow: 1;
+  background: transparent;
+  border-bottom: 1px dashed #D5DDE0;
+  padding-bottom: 15px;
+}
+
+.order span {
+  float: right;
+  color: #BABDC2;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+}
+
+.ok {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.text-content {
+  margin-top: 30px;
+  flex-basis: 100%;
+  display: inline-block;
+  color: #455273;
+  text-align: left;
 }
 
 .contact {

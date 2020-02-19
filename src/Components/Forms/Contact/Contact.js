@@ -1,21 +1,16 @@
-import React from 'react'
-// import React, {useContext} from 'react'
+import React, {useContext} from 'react'
 import './Contact.css'
-// import {AppContext} from "../../../store/appContext";
+import '../../../index.css'
+import {AppContext} from "../../../store/appContext";
 
 export const Contact = () => {
-  // const appContext = useContext(AppContext)
+  const {setContact} = useContext(AppContext)
+
 
   const submitHandler = (event) => {
     event.preventDefault()
+    setContact()
   }
-  //
-  // const cls = {height: '50px'}
-  //
-  // if (appContext.deviceType) {
-  //   cls.height="50px"
-  // }
-  // console.log(cls)
 
   return (
     <div>
@@ -30,8 +25,8 @@ export const Contact = () => {
             <input type="text" className="form-input" placeholder='Почта'/>
             <input type="text" className="form-input" placeholder='Адрес доставки'/>
           </div>
-          <input type="checkbox" required id="checkbox-data" className="checkbox-data"/>
-          <label htmlFor="checkbox-data" className="checkbox-data"
+          <input type="checkbox" required id="checkbox-data"/>
+          <label htmlFor="checkbox-data" className="checkbox-data text-content"
           >Я согласен на <a href="/collecting-data">обработку персональных данных</a>
           </label>
 

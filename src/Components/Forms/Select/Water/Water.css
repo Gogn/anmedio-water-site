@@ -4,6 +4,7 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
+  padding: 0;
 }
 
 .select {

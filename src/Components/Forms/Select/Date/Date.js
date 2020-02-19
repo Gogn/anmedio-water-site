@@ -76,7 +76,7 @@ export const DatePicker = () => {
 
   return (
     <div>
-      <h2>Дата и время доставки</h2>
+      <h3>Дата и время доставки</h3>
 
       <div className=''>
 

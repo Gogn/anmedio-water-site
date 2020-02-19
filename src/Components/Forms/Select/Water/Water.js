@@ -42,7 +42,7 @@ export const Water = () => {
 
   return (
     <div>
-      <h2>Вода</h2>
+      <h3>Вода</h3>
       <div className='flex flex-row-nowrap space-between'>
         <div className='margin'>
           <button
