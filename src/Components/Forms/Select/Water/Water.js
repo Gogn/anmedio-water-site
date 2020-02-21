@@ -4,15 +4,18 @@ import './Water.css'
 import './Counter.css'
 import BigBottle from './bigBottle.svg.js'
 import SmallBottles from './smallBottles.svg.js'
-import {Counter} from "./Counter";
+// import {Counter} from "./Counter";
 import {AppContext} from "../../../../store/appContext";
+import {ReactComponent as BackSvg} from "./back.svg";
+import {ReactComponent as OkSvg} from "../../../../Pages/ok.svg";
+import {Back} from "./Back";
 
 export const Water = () => {
   let none = '#D5DDE0'
   let select = '#FFC369'
 
   const [choise, setChoise] = useState(0)
-  const {setBigBottles, setSmallBottles1, setSmallBottles2, order} = useContext(AppContext)
+  const {deviceType, mobileStep, setMobileStep, setBigBottles, setSmallBottles1, setSmallBottles2, order} = useContext(AppContext)
 
   const addBottlesHandler = (type) => {
     if (type === '+') {
@@ -42,9 +45,12 @@ export const Water = () => {
 
   return (
     <div>
+      <Back/>
+
       <h3>Вода</h3>
-      <div className='flex flex-row-nowrap space-between'>
-        <div className='margin'>
+      <div className='flex' style={deviceType == 1 ? {marginRight: '-8vw'} : {}}>
+        <div className={'flex flex-row-nowrap space-between' + (deviceType == 1 && ' mobile-overscroll')}>
+        <div className='padding-20'>
           <button
             type='button'
             className='waterButton'
@@ -59,7 +65,7 @@ export const Water = () => {
           </button>
           {choise === 0 && <Select amount={order.bigBottles} />}
         </div>
-        <div className='margin'>
+        <div className='padding-20'>
           <button
             type='button'
             className='waterButton'
@@ -74,7 +80,7 @@ export const Water = () => {
           </button>
           {choise === 1 && <Select amount={order.smallBottles1} />}
         </div>
-        <div>
+        <div className='padding-20'>
           <button
             type='button'
             className='waterButton'
@@ -89,6 +95,7 @@ export const Water = () => {
           </button>
           {choise === 2 && <Select amount={order.smallBottles2} />}
         </div>
+      </div>
       </div>
     </div>
   )

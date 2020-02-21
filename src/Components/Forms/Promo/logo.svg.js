@@ -11,7 +11,7 @@ const Logo = props => (
       // width={130}
       // height={130}
     >
-      <circle cx={65} cy={65} r={65} fill="#DBE2F3" />
+      <circle cx={65} cy={65} r={65} fill="#F5F8FF" />
     </mask>
     <g mask="url(#prefix__a)">
       <path

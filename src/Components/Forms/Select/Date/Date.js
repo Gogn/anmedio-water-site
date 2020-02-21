@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react'
+import '../../../../index.css'
 import './Date.css'
 import forward from './forward.svg'
 import back from './back.svg'
@@ -7,13 +8,16 @@ import moment from "moment";
 
 //Buttons with dates component
 export const DatePicker = () => {
+  const {deviceType, mobileStep, setMobileStep, setBigBottles, setSmallBottles1, setSmallBottles2} = useContext(AppContext)
   const [activeDay, setActiveDay] = useState()
   let week = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
 
   const initialDates = () => {
     const today = new Date();
     const dates = []
-    for (let i = 0; i < 6; i++) {
+    let j
+    deviceType == 1 ? j = 29 : j = 6
+    for (let i = 0; i < j; i++) {
       const date = new Date();
       date.setDate(today.getDate() + i)
       dates.push(date)
@@ -82,27 +86,31 @@ export const DatePicker = () => {
 
         <h5>День</h5>
         <form action="">
-          <div className='flex flex-row flex-center  flex-nowrap space-between'>
-
-            <button type="button" className='shift' onClick={shiftLeft}>
-              <img className='image' src={back} alt="back"/>
-            </button>
-            {days.map(date => {
-              return <DayButton
-                dateFull={date} key={date}
-                day={week[date.getDay()]}
-              />
-            })}
-            <button type="button" className='shift' onClick={shiftRight}>
-              <img className='image' src={forward} alt="forward"/>
-            </button>
+          <div className="flex">
+            <div className={'flex flex-row-nowrap space-between' + (deviceType == 1 && ' mobile-overscroll')}>
+              <div style={deviceType == 1 ? {display: 'none'} : {}}>
+                <button type="button" className='shift' onClick={shiftLeft}>
+                  <img className='image' src={back} alt="back"/>
+                </button>
+              </div>
+              {days.map(date => {
+                return <DayButton
+                  dateFull={date} key={date}
+                  day={week[date.getDay()]}
+                />
+              })}
+              <div style={deviceType == 1 ? {display: 'none'} : {}}>
+                <button type="button" className='shift' onClick={shiftRight}>
+                  <img className='image' src={forward} alt="forward"/>
+                </button>
+              </div>
+            </div>
           </div>
-
         </form>
 
 
         <h5>Время</h5>
-        <div className='flex flex-row flex-center space-around'>
+        <div className='flex'>
           <form action="">
             {Times().map(time => {
               return <TimeButton
@@ -127,18 +135,22 @@ const DayButton = ({dateFull, day, onClick, isActive}) => {
   }
 
   return (
-    <button type="button" className='date-btn' onClick={SetDateHandler}
-            style={order.date.getDate() === date ? {backgroundColor: '#FFC369', color: '#fff'} : {}}
-    >
+    <div>
+      <button type="button" className='date-btn' onClick={SetDateHandler}
+              style={order.date.getDate() === date ? {backgroundColor: '#FFC369', color: '#fff'} : {}}
+      >
       <span className='date'
             style={order.date.getDate() === date ? {color: '#fff'} : {}}
-      >{date}
+      >
+        {date}
       </span>
-      <span className='day'
-            style={(day === 'вс' || day === 'сб') ? {color: '#FD7562'} : {}}
-      >{day}
+        <span className='day'
+              style={(day === 'вс' || day === 'сб') ? {color: '#FD7562'} : {}}
+        >
+        {day}
       </span>
-    </button>
+      </button>
+    </div>
   )
 }
 
@@ -155,7 +167,8 @@ const TimeButton = ({time}) => {
     >
       <span className='date'
             style={order.time === time ? {color: '#fff'} : {}}
-      >{time}
+      >
+        {time}
       </span>
     </button>
   )

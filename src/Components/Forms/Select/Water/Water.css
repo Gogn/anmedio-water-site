@@ -7,6 +7,16 @@
   padding: 0;
 }
 
+.okButton {
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 0;
+  height: 30px;
+}
+
 .select {
   text-align: center;
 }

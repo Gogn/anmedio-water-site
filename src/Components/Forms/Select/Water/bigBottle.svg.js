@@ -46,23 +46,23 @@ const BigBottle = props => (
         colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
       >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix
           in="SourceAlpha"
           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
         />
-        <feOffset dy="4"></feOffset>
-        <feGaussianBlur stdDeviation="15"></feGaussianBlur>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="15"/>
         <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"></feColorMatrix>
         <feBlend
           in2="BackgroundImageFix"
           result="effect1_dropShadow"
-        ></feBlend>
+        />
         <feBlend
           in="SourceGraphic"
           in2="effect1_dropShadow"
           result="shape"
-        ></feBlend>
+        />
       </filter>
     </defs>
     {/*Дефолтный текст из SVG: */}

@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0px 20%;
+  gap: 0px 18%;
   width: 100%;
 }
 
@@ -18,7 +18,7 @@ input[type="text"] {
   flex-grow: 1;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #D5DDE0;
+  border-bottom: 1.5px solid #D5DDE0;
   text-align: left;
 }
 
@@ -47,11 +47,18 @@ input[type="checkbox"] + label::before {
   vertical-align: middle;
   line-height: 24px;
   background: #D5DDE0;
+  font-size: 12px;
 }
 
 input[type="checkbox"]:checked + label.checkbox-data::before {
   content: url('checkbox-ok.svg');
   color: #fff;
   background-color: #418DE8;
+}
+
+.form-input {
+  font-size: 12px;
+  line-height: 15px;
+  color: #455273;
 }
 

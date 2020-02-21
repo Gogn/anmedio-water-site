@@ -14,8 +14,6 @@ export const Contact = () => {
 
   return (
     <div>
-      <h2>Заполните данные</h2>
-
       <form onSubmit={submitHandler}>
 
         <div className="flex flex-row flex-wrap space-around">
@@ -27,7 +25,8 @@ export const Contact = () => {
           </div>
           <input type="checkbox" required id="checkbox-data"/>
           <label htmlFor="checkbox-data" className="checkbox-data text-content"
-          >Я согласен на <a href="/collecting-data">обработку персональных данных</a>
+          ><p className="text-inline">Я согласен на</p>&nbsp;
+            <a href="/collecting-data">обработку персональных данных</a>
           </label>
 
         </div>

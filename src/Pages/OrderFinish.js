@@ -7,7 +7,7 @@ import {Contact} from "../Components/Forms/Contact/Contact";
 import {Select} from "../Components/Forms/Select/Select";
 import {Bill} from "../Components/Forms/Select/Bill/Bill";
 import {Button} from "../Components/UI/Button/Button";
-import { ReactComponent as OkSvg } from './ok.svg'
+import {ReactComponent as OkSvg} from './ok.svg'
 
 export const OrderFinish = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
@@ -15,55 +15,70 @@ export const OrderFinish = () => {
   // const appContext = useContext(AppContext)
 
   if (deviceType) {
-    if (mobileStep === 1) {
-      return (
-        <div className='desktop'>
-          <h1>Mobile</h1>
-          <div className='c'>asdasd</div>
-          <div>qweqweqwe</div>
-          <div>zxczxczxc</div>
-          <Promo/>
+    return (
+      <div className='main mobile flex flex-column '>
+        <div className='padding-phone mobile flex space-between flex-column justify-center flex-grow-1'>
+            <h3 style={{lineHeight: '0px'}}><OkSvg className='ok'/><span>Заказ Оформлен</span></h3>
+          <div className='order-mobile'>
+            <p>hghgjg<span>asdasdasd</span></p>
+            <div className="rule-15"/>
+            <p>hghgjg<span>asdasdasd</span></p>
+            <div className="rule-15"/>
+            <p>hghgjg<span>asdasdasd</span></p>
+            <div className="rule-15"/>
+            <p>Адрес доставки<span>asdasdasd</span></p>
+          </div>
+
+          <Bill/>
+          <div className='container'>
+          <p className='text-order-finish container' style={{width: '60vw'}}>Ваш заказ №221 успешно оформлен. В ближайшее время
+            по указанному телефону с Вами свяжется наш менеджер.</p>
+          </div>
+          <div  className='container'>
+            <Button
+              text='Новый заказ'
+              class='blue'
+              to='/'
+              useHistory={true}
+            />
+          </div>
         </div>
-      )
-    }
-    if (mobileStep === 2) {
-      return (
-        <>
-          2
-          <Promo/>
-        </>
-      )
-    }
+        </div>
+    )
   } else {
     return (
       <div className='main flex flex-center'>
 
-        <div className='flex-grow-1'>
+        <div className='promo'>
           <Promo/>
         </div>
 
-        <div className="content">
+        <div className="content flex space-between flex-column">
 
-          <h2><OkSvg className='ok'/><span>Заказ Оформлен</span></h2>
+          <h2 style={{marginBottom: 0}}><OkSvg className='ok'/><span>Заказ Оформлен</span></h2>
 
           <div className='order'>
             <p>hghgjg<span>asdasdasd</span></p>
+            <div className="rule-15"/>
             <p>hghgjg<span>asdasdasd</span></p>
+            <div className="rule-15"/>
             <p>hghgjg<span>asdasdasd</span></p>
-            <p>hghgjg<span>asdasdasd</span></p>
+            <div className="rule-15"/>
+            <p>Адрес доставки<span>asdasdasd</span></p>
           </div>
 
-            <Bill/>
-            <p className='text-content' style={{color: '#818FB3'}}>Ваш заказ №221 успешно оформлен. В ближайшее время по указанному телефону с Вами свяжется наш менеджер.</p>
+          <Bill/>
+          <p className='text-order-finish' style={{color: '#818FB3'}}>Ваш заказ №221 успешно оформлен. В ближайшее время
+            по указанному телефону с Вами свяжется наш менеджер.</p>
           <div>
             <Button
               text='Новый заказ'
-              type='blue'
+              class='blue'
               to='/'
+              useHistory={true}
             />
           </div>
         </div>
-
       </div>
     )
   }

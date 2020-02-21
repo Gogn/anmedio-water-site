@@ -4,7 +4,7 @@ import {
   APP_SET_DEVICE,
   ORDER_AGAIN,
   SET_BIG_BOTTLES, SET_CONTACT,
-  SET_DATE,
+  SET_DATE, SET_MOBILE_STEP,
   SET_SMALL_BOTTLES,
   SET_SMALL_BOTTLES1, SET_SMALL_BOTTLES2,
   SET_TIME
@@ -32,13 +32,14 @@ export const AppState = ({children}) => {
   }
 
   function isMobile() {
-    return ((window.innerWidth < 600) && (window.innerHeight < 600))
+    return ((window.innerWidth < 600) && (window.innerHeight < 800))
   }
 
 
   const [state, dispatch] = useReducer(appReducer, initialState)
 
   const setDevice = (payload) => dispatch({type: APP_SET_DEVICE, payload: payload})
+  const setMobileStep = (payload) => dispatch({type: SET_MOBILE_STEP, payload: payload})
   const setDate = (payload) => dispatch({type: SET_DATE, payload: payload})
   const setTime = (payload) => dispatch({type: SET_TIME, payload: payload})
   const setContact = (payload) => dispatch({type: SET_CONTACT, payload: payload})
@@ -51,7 +52,7 @@ export const AppState = ({children}) => {
 
   return (
     <AppContext.Provider value={{
-      isMobile, setDevice, setDate, setTime, orderAgain, setContact, setBigBottles, setSmallBottles1, setSmallBottles2,
+      isMobile, setDevice, setMobileStep, setDate, setTime, orderAgain, setContact, setBigBottles, setSmallBottles1, setSmallBottles2,
       deviceType, mobileStep, isAuthenticated, order
     }}>
       {children}
