@@ -1,20 +1,14 @@
 import React, {useContext} from 'react'
-// import MobileLayout from "../Layouts/MobileLayout";
-// import DesktopLayout from "../Layouts/DesktopLayout";
 import Promo from "../Components/Forms/Promo/Promo";
 import {AppContext} from "../store/appContext";
 import {Contact} from "../Components/Forms/Contact/Contact";
-import {Select} from "../Components/Forms/Select/Select";
 import {Bill} from "../Components/Forms/Select/Bill/Bill";
 import {Button} from "../Components/UI/Button/Button";
-import {useHistory} from "react-router-dom";
 import {Water} from "../Components/Forms/Select/Water/Water";
 import {DatePicker} from "../Components/Forms/Select/Date/Date";
 
 export const Order = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
-
-  // const appContext = useContext(AppContext)
 
   if (deviceType) {
     console.log(mobileStep)
@@ -88,7 +82,7 @@ export const Order = () => {
 
         <div className="content">
 
-          <h2>Заполните данные</h2>
+          <h2 style={{marginBottom: '10px'}}>Заполните данные</h2>
           <div className='contact'>
             <Contact/>
           </div>

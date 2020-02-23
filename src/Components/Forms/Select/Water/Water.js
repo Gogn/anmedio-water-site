@@ -4,10 +4,7 @@ import './Water.css'
 import './Counter.css'
 import BigBottle from './bigBottle.svg.js'
 import SmallBottles from './smallBottles.svg.js'
-// import {Counter} from "./Counter";
 import {AppContext} from "../../../../store/appContext";
-import {ReactComponent as BackSvg} from "./back.svg";
-import {ReactComponent as OkSvg} from "../../../../Pages/ok.svg";
 import {Back} from "./Back";
 
 export const Water = () => {
@@ -15,7 +12,7 @@ export const Water = () => {
   let select = '#FFC369'
 
   const [choise, setChoise] = useState(0)
-  const {deviceType, mobileStep, setMobileStep, setBigBottles, setSmallBottles1, setSmallBottles2, order} = useContext(AppContext)
+  const {deviceType, setBigBottles, setSmallBottles1, setSmallBottles2, order} = useContext(AppContext)
 
   const addBottlesHandler = (type) => {
     if (type === '+') {
@@ -29,6 +26,7 @@ export const Water = () => {
         case 2 :
           setSmallBottles2()
           break
+        default : break
       }
     }
   }
@@ -48,8 +46,8 @@ export const Water = () => {
       <Back/>
 
       <h3>Вода</h3>
-      <div className='flex' style={deviceType == 1 ? {marginRight: '-8vw'} : {}}>
-        <div className={'flex flex-row-nowrap space-between' + (deviceType == 1 && ' mobile-overscroll')}>
+      <div className='flex' style={deviceType === 1 ? {marginRight: '-8vw'} : {}}>
+        <div className={'flex flex-row-nowrap space-between' + (deviceType === 1 && ' mobile-overscroll')}>
         <div className='padding-20'>
           <button
             type='button'

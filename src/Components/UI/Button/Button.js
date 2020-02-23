@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import classes from './Button.module.css'
 import { useHistory } from 'react-router-dom';
-import {Link} from "react-router-dom";
 import {AppContext} from "../../../store/appContext";
 
 export const Button = (props) => {
@@ -21,6 +20,7 @@ export const Button = (props) => {
       case 'mobileStep' :
         setMobileStep(mobileStep+1)
         break
+      default : break
     }
     props.useHistory === true && history.push(props.to)
   }

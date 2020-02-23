@@ -1,0 +1,29 @@
+.Input {
+  font-size: 12px;
+  line-height: 15px;
+  color: #455273;
+  margin-top: 30px;
+  flex-grow: 1;
+}
+
+.Input input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #D5DDE0;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.Input p {
+  color: #f01f30;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.invalid Input {
+  color: #f01f30;
+}

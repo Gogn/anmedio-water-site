@@ -1,18 +1,13 @@
 import React, {useContext} from 'react'
-// import MobileLayout from "../Layouts/MobileLayout";
-// import DesktopLayout from "../Layouts/DesktopLayout";
 import Promo from "../Components/Forms/Promo/Promo";
 import {AppContext} from "../store/appContext";
-import {Contact} from "../Components/Forms/Contact/Contact";
-import {Select} from "../Components/Forms/Select/Select";
 import {Bill} from "../Components/Forms/Select/Bill/Bill";
 import {Button} from "../Components/UI/Button/Button";
 import {ReactComponent as OkSvg} from './ok.svg'
+import {OrderList} from "../Components/Forms/Order/OrderList";
 
 export const OrderFinish = () => {
-  const {deviceType, mobileStep} = useContext(AppContext)
-
-  // const appContext = useContext(AppContext)
+  const {deviceType} = useContext(AppContext)
 
   if (deviceType) {
     return (
@@ -20,13 +15,7 @@ export const OrderFinish = () => {
         <div className='padding-phone mobile flex space-between flex-column justify-center flex-grow-1'>
             <h3 style={{lineHeight: '0px'}}><OkSvg className='ok'/><span>Заказ Оформлен</span></h3>
           <div className='order-mobile'>
-            <p>hghgjg<span>asdasdasd</span></p>
-            <div className="rule-15"/>
-            <p>hghgjg<span>asdasdasd</span></p>
-            <div className="rule-15"/>
-            <p>hghgjg<span>asdasdasd</span></p>
-            <div className="rule-15"/>
-            <p>Адрес доставки<span>asdasdasd</span></p>
+            <OrderList/>
           </div>
 
           <Bill/>
@@ -54,17 +43,9 @@ export const OrderFinish = () => {
         </div>
 
         <div className="content flex space-between flex-column">
-
           <h2 style={{marginBottom: 0}}><OkSvg className='ok'/><span>Заказ Оформлен</span></h2>
-
           <div className='order'>
-            <p>hghgjg<span>asdasdasd</span></p>
-            <div className="rule-15"/>
-            <p>hghgjg<span>asdasdasd</span></p>
-            <div className="rule-15"/>
-            <p>hghgjg<span>asdasdasd</span></p>
-            <div className="rule-15"/>
-            <p>Адрес доставки<span>asdasdasd</span></p>
+            <OrderList/>
           </div>
 
           <Bill/>
@@ -78,6 +59,7 @@ export const OrderFinish = () => {
               useHistory={true}
             />
           </div>
+
         </div>
       </div>
     )

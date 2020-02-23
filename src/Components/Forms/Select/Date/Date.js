@@ -8,15 +8,15 @@ import moment from "moment";
 
 //Buttons with dates component
 export const DatePicker = () => {
-  const {deviceType, mobileStep, setMobileStep, setBigBottles, setSmallBottles1, setSmallBottles2} = useContext(AppContext)
-  const [activeDay, setActiveDay] = useState()
+  const {deviceType} = useContext(AppContext)
+  // const [activeDay, setActiveDay] = useState()
   let week = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
 
   const initialDates = () => {
     const today = new Date();
     const dates = []
     let j
-    deviceType == 1 ? j = 29 : j = 6
+    deviceType === 1 ? j = 29 : j = 6
     for (let i = 0; i < j; i++) {
       const date = new Date();
       date.setDate(today.getDate() + i)
@@ -76,7 +76,7 @@ export const DatePicker = () => {
     return workTimes;
   }
 
-  const {setDate, order} = useContext(AppContext)
+  const {order} = useContext(AppContext)
 
   return (
     <div>
@@ -87,8 +87,8 @@ export const DatePicker = () => {
         <h5>День</h5>
         <form action="">
           <div className="flex">
-            <div className={'flex flex-row-nowrap space-between' + (deviceType == 1 && ' mobile-overscroll')}>
-              <div style={deviceType == 1 ? {display: 'none'} : {}}>
+            <div className={'flex flex-row-nowrap space-between' + (deviceType === 1 && ' mobile-overscroll')}>
+              <div style={deviceType === 1 ? {display: 'none'} : {}}>
                 <button type="button" className='shift' onClick={shiftLeft}>
                   <img className='image' src={back} alt="back"/>
                 </button>
@@ -99,7 +99,7 @@ export const DatePicker = () => {
                   day={week[date.getDay()]}
                 />
               })}
-              <div style={deviceType == 1 ? {display: 'none'} : {}}>
+              <div style={deviceType === 1 ? {display: 'none'} : {}}>
                 <button type="button" className='shift' onClick={shiftRight}>
                   <img className='image' src={forward} alt="forward"/>
                 </button>
@@ -133,7 +133,6 @@ const DayButton = ({dateFull, day, onClick, isActive}) => {
   const SetDateHandler = () => {
     setDate(dateFull)
   }
-
   return (
     <div>
       <button type="button" className='date-btn' onClick={SetDateHandler}

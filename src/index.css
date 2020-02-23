@@ -193,11 +193,15 @@ div.rule-15 {
   line-height: 18px;
   flex-grow: 1;
   background: transparent;
-  /*border-bottom: 1px dashed #D5DDE0;*/
-  /*padding-bottom: 15px;*/
   color: #455273;
   font-size: 14px;
   font-weight: 600;
+}
+.order-mobile span {
+  float: right;
+  color: #BABDC2;
+  font-size: 12px;
+  text-align: right;
 }
 
 .order p {
@@ -207,18 +211,14 @@ div.rule-15 {
   line-height: 18px;
   flex-grow: 1;
   background: transparent;
-  /*border-bottom: 1px dashed #D5DDE0;*/
-  /*padding-bottom: 15px;*/
   color: #455273;
   font-size: 14px;
   font-weight: 600;
 }
-
 .order span {
   float: right;
   color: #BABDC2;
   font-size: 12px;
-  line-height: 15px;
   text-align: right;
 }
 
