@@ -28,7 +28,8 @@ const Input = props => {
       return [intlCode, '(', match[2], ') ', match[3], '-', match[4], '-', match[5]].join('')
     }
 
-    return null;
+    if ( str.match(/[A-z]|[А-я]/) ) return ''
+    return str;
   }
 
   return (

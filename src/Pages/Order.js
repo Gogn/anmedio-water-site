@@ -11,7 +11,6 @@ export const Order = () => {
   const {deviceType, mobileStep} = useContext(AppContext)
 
   if (deviceType) {
-    console.log(mobileStep)
 
     if (mobileStep === 1) {
       return (
@@ -51,7 +50,7 @@ export const Order = () => {
             <div className='select'>
               <div>
                 <Water/>
-                <div className='rule'></div>
+                <div className='rule'/>
                 <DatePicker className='flex-grow-1'/>
               </div>
             </div>

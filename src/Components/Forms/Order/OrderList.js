@@ -4,7 +4,7 @@ import moment from "moment";
 import 'moment/locale/ru'
 
 export const OrderList = () => {
-  const {deviceType, mobileStep, order, contact} = useContext(AppContext)
+  const {order, contact} = useContext(AppContext)
   moment.locale('ru')
 
   return (
@@ -21,8 +21,6 @@ export const OrderList = () => {
 
 const Items = () => {
   const {order} = useContext(AppContext)
-
-  // let j = (order.bigBottles + order.smallBottles1 + order.smallBottles2)
 
   let items = []
 
@@ -52,6 +50,4 @@ const Items = () => {
   }
 
     return (items)
-  // console.log({items})
-  // return null
 }
