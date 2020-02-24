@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/anmedio-water-site/static/css/main.fd32538a.chunk.css",
+    "main.js": "/anmedio-water-site/static/js/main.8f111da2.chunk.js",
+    "main.js.map": "/anmedio-water-site/static/js/main.8f111da2.chunk.js.map",
+    "runtime-main.js": "/anmedio-water-site/static/js/runtime-main.23657a53.js",
+    "runtime-main.js.map": "/anmedio-water-site/static/js/runtime-main.23657a53.js.map",
+    "static/js/2.d9063c7d.chunk.js": "/anmedio-water-site/static/js/2.d9063c7d.chunk.js",
+    "static/js/2.d9063c7d.chunk.js.map": "/anmedio-water-site/static/js/2.d9063c7d.chunk.js.map",
+    "index.html": "/anmedio-water-site/index.html",
+    "precache-manifest.84c582590f711a76737a9f5e9a84818f.js": "/anmedio-water-site/precache-manifest.84c582590f711a76737a9f5e9a84818f.js",
+    "service-worker.js": "/anmedio-water-site/service-worker.js",
+    "static/css/main.fd32538a.chunk.css.map": "/anmedio-water-site/static/css/main.fd32538a.chunk.css.map",
+    "static/js/2.d9063c7d.chunk.js.LICENSE.txt": "/anmedio-water-site/static/js/2.d9063c7d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/anmedio-water-site/static/media/CeraPro-Regular.cf954f65.ttf",
+    "static/media/back.svg": "/anmedio-water-site/static/media/back.5a376dfa.svg",
+    "static/media/back.e2aae19e.svg": "/anmedio-water-site/static/media/back.e2aae19e.svg",
+    "static/media/Contact.css": "/anmedio-water-site/static/media/checkbox-ok.e2b09886.svg",
+    "static/media/forward.svg": "/anmedio-water-site/static/media/forward.76c7cfbb.svg",
+    "static/media/ok.694c6e51.svg": "/anmedio-water-site/static/media/ok.694c6e51.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23657a53.js",
+    "static/js/2.d9063c7d.chunk.js",
+    "static/css/main.fd32538a.chunk.css",
+    "static/js/main.8f111da2.chunk.js"
+  ]
+}
