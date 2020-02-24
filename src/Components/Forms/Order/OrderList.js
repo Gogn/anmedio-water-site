@@ -7,9 +7,13 @@ export const OrderList = () => {
   const {order, contact} = useContext(AppContext)
   moment.locale('ru')
 
+  const items = Items()
+
   return (
     <div>
-      <Items/>
+      {items.map((item, key) =>
+        React.cloneElement(item, {key})
+      )}
       <p>{moment(order.date).format('D MMMM')}<span>{order.time}</span></p>
       <div className="rule-15"/>
       <p>Адрес доставки<span>{contact.address.value}</span></p>

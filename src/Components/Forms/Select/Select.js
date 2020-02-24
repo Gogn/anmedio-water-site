@@ -11,22 +11,3 @@ export const Select = () => {
     </div>
   )
 }
-
-//
-// class StateContainer extends React.Component {
-//   state = {
-//     days: {},
-//     contacts: {},
-//     currentPage: 'days',
-//   }
-//
-//   render() {
-//     if (this.state.selectedPage === 'days') {
-//       return <DatePicker setDays={(days) => {
-//         this.setState({days})
-//       }}/>
-//     } else {
-//       return <Contacts/>
-//     }
-//   }
-// }

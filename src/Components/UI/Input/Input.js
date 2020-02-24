@@ -36,7 +36,7 @@ const Input = props => {
     <div className={cls.join(' ')}>
       <input
         type={inputType}
-        id={props.type+props.value}
+        id={props.index}
         value={props.type === 'phone' ? formatPhoneNumber(props.value) : props.value}
         onChange={props.onChange}
         placeholder={props.label}

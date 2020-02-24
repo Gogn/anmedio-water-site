@@ -7,7 +7,7 @@ import {ReactComponent as OkSvg} from './ok.svg'
 import {OrderList} from "../Components/Forms/Order/OrderList";
 
 export const OrderFinish = () => {
-  const {deviceType} = useContext(AppContext)
+  const {deviceType, orderAgain} = useContext(AppContext)
 
   if (deviceType) {
     return (
@@ -23,7 +23,7 @@ export const OrderFinish = () => {
           <p className='text-order-finish container' style={{width: '60vw'}}>Ваш заказ №221 успешно оформлен. В ближайшее время
             по указанному телефону с Вами свяжется наш менеджер.</p>
           </div>
-          <div  className='container'>
+          <div className='container'>
             <Button
               text='Новый заказ'
               class='blue'
@@ -51,8 +51,11 @@ export const OrderFinish = () => {
           <Bill/>
           <p className='text-order-finish' style={{color: '#818FB3'}}>Ваш заказ №221 успешно оформлен. В ближайшее время
             по указанному телефону с Вами свяжется наш менеджер.</p>
-          <div>
+          <div
+               onClick={orderAgain}
+          >
             <Button
+              style={{marginTop: '30px'}}
               text='Новый заказ'
               class='blue'
               to='/'

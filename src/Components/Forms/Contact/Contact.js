@@ -6,7 +6,7 @@ import Input from "../../UI/Input/Input";
 import is from 'is_js'
 
 export const Contact = () => {
-  const {setContact, contact} = useContext(AppContext)
+  const {setContact, contact, setAgree} = useContext(AppContext)
 
 
   const submitHandler = (event) => {
@@ -51,9 +51,6 @@ export const Contact = () => {
     })
 
    setContact(formControls)
-    // this.setState({
-    //   formControls, isFormValid
-    // })
   }
 
   const renderInputs = () => {
@@ -70,6 +67,7 @@ export const Contact = () => {
           errorMessage={control.errorMessage}
           shouldValidate={!!control.validation} //Преобразование в булевый тип
           onChange={event => onChangeHandler(event, controlName)}
+          id={index}
         />
       )
     })
@@ -83,7 +81,9 @@ export const Contact = () => {
           <div className="item">
             {renderInputs()}
           </div>
-          <input type="checkbox" required id="checkbox-data"/>
+          <input type="checkbox" required id="checkbox-data"
+                 onChange={setAgree}
+          />
           <label htmlFor="checkbox-data" className="checkbox-data text-content"
           ><p className="text-inline">Я согласен на</p>&nbsp;
             <a href="/collecting-data">обработку персональных данных</a>

@@ -2,10 +2,9 @@
   display: inline-block;
   border-radius: 20px;
   border: none;
-  /*margin-right: 15px;*/
   margin-top: 50px;
 
-
+  width: 165px;
   height: 40px;
   padding-left: 35px;
   padding-right: 35px;
@@ -35,4 +34,8 @@
 
 .blue {
   background: #418DE8;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }

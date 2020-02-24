@@ -8,7 +8,11 @@ import {Water} from "../Components/Forms/Select/Water/Water";
 import {DatePicker} from "../Components/Forms/Select/Date/Date";
 
 export const Order = () => {
-  const {deviceType, mobileStep} = useContext(AppContext)
+  const {contact, order, agree, deviceType, mobileStep} = useContext(AppContext)
+
+  const dispatchData = () => {
+    console.log(contact, order, agree)
+  }
 
   if (deviceType) {
 
@@ -34,11 +38,13 @@ export const Order = () => {
             <h3 style={{marginBottom: '5px'}}>Заполните данные</h3>
           <Contact/>
             </div>
+            <div className='container'>
             <Button
               text='Далее'
               class='blue'
               type='mobileStep'
             />
+            </div>
           </div>
         </div>
       )
@@ -58,7 +64,10 @@ export const Order = () => {
             <div className=''>
               <Bill/>
             </div>
-            <div className='container'>
+            <div
+              className='container'
+              onClick={dispatchData}
+            >
               <Button
                 text='Заказать воду'
                 class='blue'
@@ -94,7 +103,9 @@ export const Order = () => {
           <div className=''>
             <Bill/>
           </div>
-          <div>
+          <div
+            onClick={dispatchData}
+          >
             <Button
               text='Заказать воду'
               class='blue'

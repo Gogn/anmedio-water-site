@@ -2,7 +2,7 @@ import React, {useReducer} from 'react'
 import {appReducer} from "./appReducer";
 import {
   APP_SET_DEVICE,
-  ORDER_AGAIN,
+  ORDER_AGAIN, SET_AGREE,
   SET_BIG_BOTTLES, SET_CONTACT,
   SET_DATE, SET_MOBILE_STEP,
   SET_SMALL_BOTTLES1, SET_SMALL_BOTTLES2,
@@ -13,8 +13,8 @@ import {AppContext} from "./appContext";
 export const AppState = ({children}) => {
   const initialState = {
     deviceType: isMobile(),
-    mobileStep: 2,
-    isAuthenticated: true,
+    mobileStep: 1,
+    agree: false,
     order: {
       bigBottles: 0,
       smallBottles1: 0,
@@ -84,20 +84,21 @@ export const AppState = ({children}) => {
 
   const setDevice = (payload) => dispatch({type: APP_SET_DEVICE, payload: payload})
   const setMobileStep = (payload) => dispatch({type: SET_MOBILE_STEP, payload: payload})
+  const setAgree = (payload) => dispatch({type: SET_AGREE, payload: payload})
   const setDate = (payload) => dispatch({type: SET_DATE, payload: payload})
   const setTime = (payload) => dispatch({type: SET_TIME, payload: payload})
   const setContact = (payload) => dispatch({type: SET_CONTACT, payload: payload})
   const setBigBottles = () => dispatch({type: SET_BIG_BOTTLES})
   const setSmallBottles1 = (payload) => dispatch({type: SET_SMALL_BOTTLES1, payload: payload})
   const setSmallBottles2 = (payload) => dispatch({type: SET_SMALL_BOTTLES2, payload: payload})
-  const orderAgain = () => dispatch({type: ORDER_AGAIN})
+  const orderAgain = (initialState) => dispatch({type: ORDER_AGAIN, payload: initialState})
 
-  const {deviceType, mobileStep, isAuthenticated, order, contact} = state
+  const {deviceType, agree, mobileStep, isAuthenticated, order, contact} = state
 
   return (
     <AppContext.Provider value={{
-      isMobile, setDevice, setMobileStep, setDate, setTime, orderAgain, setContact, setBigBottles, setSmallBottles1, setSmallBottles2,
-      deviceType, mobileStep, isAuthenticated, order, contact
+      setDevice, setAgree, setMobileStep, setDate, setTime, orderAgain, setContact, setBigBottles, setSmallBottles1, setSmallBottles2,
+      deviceType, mobileStep, isAuthenticated, order, contact, agree
     }}>
       {children}
     </AppContext.Provider>

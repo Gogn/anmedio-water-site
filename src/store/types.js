@@ -1,4 +1,5 @@
 export const APP_SET_DEVICE = 'APP_SET_DEVICE'
+export const SET_AGREE = 'SET_AGREE'
 export const ORDER_AGAIN = 'ORDER_AGAIN'
 export const SET_DATE = 'SET_DATE'
 export const SET_TIME = 'SET_TIME'
