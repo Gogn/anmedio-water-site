@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/anmedio-water-site/precache-manifest.84c582590f711a76737a9f5e9a84818f.js"
+  "/anmedio-water-site/precache-manifest.cbf6718dfd5deeff1881f6cb2cf1fed9.js"
 );
 
 self.addEventListener('message', (event) => {
