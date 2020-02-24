@@ -79,8 +79,10 @@ export const AppState = ({children}) => {
     return +((window.innerWidth < 600) && (window.innerHeight < 800))
   }
 
-
   const [state, dispatch] = useReducer(appReducer, initialState)
+
+  // console.log('initialState ', {...initialState})
+  // console.log('State ', state)
 
   const setDevice = (payload) => dispatch({type: APP_SET_DEVICE, payload: payload})
   const setMobileStep = (payload) => dispatch({type: SET_MOBILE_STEP, payload: payload})
@@ -91,7 +93,7 @@ export const AppState = ({children}) => {
   const setBigBottles = () => dispatch({type: SET_BIG_BOTTLES})
   const setSmallBottles1 = (payload) => dispatch({type: SET_SMALL_BOTTLES1, payload: payload})
   const setSmallBottles2 = (payload) => dispatch({type: SET_SMALL_BOTTLES2, payload: payload})
-  const orderAgain = (initialState) => dispatch({type: ORDER_AGAIN, payload: initialState})
+  const orderAgain = () => dispatch({type: ORDER_AGAIN, payload: initialState})
 
   const {deviceType, agree, mobileStep, isAuthenticated, order, contact} = state
 

@@ -23,7 +23,9 @@ export const OrderFinish = () => {
           <p className='text-order-finish container' style={{width: '60vw'}}>Ваш заказ №221 успешно оформлен. В ближайшее время
             по указанному телефону с Вами свяжется наш менеджер.</p>
           </div>
-          <div className='container'>
+          <div className='container'
+               onClick={orderAgain}
+          >
             <Button
               text='Новый заказ'
               class='blue'
