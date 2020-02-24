@@ -8,7 +8,7 @@ import {AppState} from "./store/appState";
 
 const app = (
   <AppState>
-    <BrowserRouter>
+    <BrowserRouter basename={'/anmedio-water-site/'}>
       <App/>
     </BrowserRouter>
   </AppState>
